@@ -2,7 +2,6 @@ package db
 
 import (
 	"fmt"
-	"os"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -18,21 +17,21 @@ func dbvar() string {
 	//}
 
 	// CONFIG VARS
-	DB_HOST := os.Getenv("DB_HOST")
-	DB_PORT := os.Getenv("DB_PORT")
-	DB_PASSWORD := os.Getenv("DB_PASSWORD")
-	DB_NAME := os.Getenv("DB_NAME")
-	DB_USER := os.Getenv("DB_USER")
+	// DB_HOST := os.Getenv("DB_HOST")
+	// DB_PORT := os.Getenv("DB_PORT")
+	// DB_PASSWORD := os.Getenv("DB_PASSWORD")
+	// DB_NAME := os.Getenv("DB_NAME")
+	// DB_USER := os.Getenv("DB_USER")
 
-	dsn := ("host=" + DB_HOST +
-		" user=" + DB_USER +
-		" password=" + DB_PASSWORD +
-		" dbname=" + DB_NAME +
-		" port=" + DB_PORT +
-		" sslmode=disable TimeZone=Asia/Shanghai") //
+	// dsn := ("host=" + DB_HOST +
+	// 	" user=" + DB_USER +
+	// 	" password=" + DB_PASSWORD +
+	// 	" dbname=" + DB_NAME +
+	// 	" port=" + DB_PORT +
+	// 	" sslmode=disable TimeZone=Asia/Shanghai") //
 
 	// LOCAL DB
-	//dsn := "host=localhost user=root password=secret dbname=root port=5431 sslmode=disable TimeZone=Asia/Shanghai"
+	dsn := "host=localhost user=postgres password=postgres dbname=testapp port=5432 sslmode=disable"
 
 	return dsn
 }
